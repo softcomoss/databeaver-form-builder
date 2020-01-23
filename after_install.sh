@@ -1,1 +1,3 @@
-sudo cp -r /tmp/nbuild-admin-v1/* /home/ubuntu/nbuild-admin-v1
+#!/bin/bash
+sudo rm -r /home/ubuntu/npay-frontend
+sudo mv /tmp/npay-frontend /home/ubuntu/npay-frontend
