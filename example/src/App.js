@@ -1,10 +1,12 @@
 import React from 'react'
 
-import { ExampleComponent } from 'databeaver-form-builder'
-import 'databeaver-form-builder/dist/index.css'
+import { FormBuilder } from 'databeaver-form-builder'
+import 'databeaver-form-builder/dist/styles/uikit.min.css'
+import 'databeaver-form-builder/dist/styles/device.min.css'
+import 'databeaver-form-builder/dist/styles/style.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return <FormBuilder />
 }
 
 export default App

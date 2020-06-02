@@ -24,7 +24,13 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^16.0.0",
+    "redux": "^4.0.1",
+    "uikit": "^3.2.0",
+    "redux-thunk": "^2.3.0",
+    "react-redux": "^7.0.3",
+    "react-beautiful-dnd": "^13.0.0",
+    "uid": "0.0.2"
   },
   "devDependencies": {
     "microbundle-crl": "^0.13.10",
@@ -45,7 +51,13 @@
     "prettier": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "redux": "^4.0.1",
+    "uikit": "^3.2.0",
+    "redux-thunk": "^2.3.0",
+    "react-redux": "^7.0.3",
+    "react-beautiful-dnd": "^13.0.0",
+    "uid": "0.0.2"
   },
   "files": [
     "dist"

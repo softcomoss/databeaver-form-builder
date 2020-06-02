@@ -25,6 +25,16 @@ class Example extends Component {
 }
 ```
 
+## Styling
+
+import the following styles
+
+```bash
+import 'databeaver-form-builder/dist/styles/uikit.min.css'
+import 'databeaver-form-builder/dist/styles/device.min.css'
+import 'databeaver-form-builder/dist/styles/style.css'
+```
+
 ## License
 
 MIT © [w3bh4ck](https://github.com/w3bh4ck)

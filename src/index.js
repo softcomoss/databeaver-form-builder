@@ -1,6 +1,10 @@
 import React from 'react'
-import styles from './styles.module.css'
+import Main from './Main'
 
-export const ExampleComponent = ({ text }) => {
-  return <div className={styles.test}>Example Component: {text}</div>
+export const FormBuilder = () => {
+  return (
+    <div>
+      <Main />
+    </div>
+  )
 }
