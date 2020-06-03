@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import uid from 'uid'
 // import "./FormBuilderControlButtons.css";
-// import { connect } from "react-redux";
-// import {
-// 	addElement,
-// 	addRatingElement,
-// 	addMultichoiceElement,
-// 	addMultichoiceWithPhoto,
-// 	addHybridGeolocation,
-// 	addEmbeddedPhoto,
-// 	AddSinglePhoto,
-// 	AddMultiPhoto,
-// 	addNumberElement,
-// 	addFileUploadElement,
-// 	addAddressElement,
-// } from "../../redux/actions/form-action/formControlActions";
+import { connect } from 'react-redux'
+import {
+  addElement,
+  addRatingElement,
+  addMultichoiceElement,
+  addMultichoiceWithPhoto,
+  addHybridGeolocation,
+  addEmbeddedPhoto,
+  AddSinglePhoto,
+  AddMultiPhoto,
+  addNumberElement,
+  addFileUploadElement,
+  addAddressElement
+} from '../../redux/actions/form-action/formControlActions'
 import { displayControls } from '../../utils/form-controls.utils'
 import ShortTextIcon from '../../icons/Short-text.icons'
 import LongTextIcon from '../../icons/Long-text.icons'
@@ -31,6 +31,8 @@ import LocationIcon from '../../icons/Location.icon'
 import AreaMapIcon from '../../icons/Area-map.icons'
 import RatingIcon from '../../icons/Rating.icon'
 import BiometricIcon from '../../icons/Biometric.icons'
+import AgreementIcon from '../../icons/Agreement.icons'
+import FileUploadIcon from '../../icons/File-upload.icons'
 
 const FormBuilderControlButtons = (props) => {
   const [openDrawer, toggleDrawer] = useState(false)
@@ -273,9 +275,7 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#address' />
-                  </svg>
+                  <LocationIcon />
                   <span className='btn-title'>Address</span>
                 </button>
                 <div
@@ -565,9 +565,7 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#file-upload' />
-                  </svg>
+                  <FileUploadIcon />
                   <span className='btn-title'>File upload</span>
                 </button>
                 <div
@@ -649,9 +647,7 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#agreement' />
-                  </svg>
+                  <AgreementIcon />
                   <span className='btn-title'>Agreement</span>
                 </button>
                 <div
@@ -706,23 +702,21 @@ const FormBuilderControlButtons = (props) => {
   )
 }
 
-// const mapStateToProps = (state) => ({
-// 	type: state.addElement,
-// 	id: state.addElement,
-// });
+const mapStateToProps = (state) => ({
+  type: state.addElement,
+  id: state.addElement
+})
 
-// export default connect(mapStateToProps, {
-// 	addElement,
-// 	addRatingElement,
-// 	addMultichoiceElement,
-// 	addHybridGeolocation,
-// 	addEmbeddedPhoto,
-// 	AddSinglePhoto,
-// 	AddMultiPhoto,
-// 	addNumberElement,
-// 	addMultichoiceWithPhoto,
-// 	addFileUploadElement,
-// 	addAddressElement,
-// })(FormBuilderControlButtons);
-
-export default FormBuilderControlButtons
+export default connect(mapStateToProps, {
+  addElement,
+  addRatingElement,
+  addMultichoiceElement,
+  addHybridGeolocation,
+  addEmbeddedPhoto,
+  AddSinglePhoto,
+  AddMultiPhoto,
+  addNumberElement,
+  addMultichoiceWithPhoto,
+  addFileUploadElement,
+  addAddressElement
+})(FormBuilderControlButtons)

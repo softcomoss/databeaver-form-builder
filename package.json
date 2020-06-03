@@ -30,6 +30,7 @@
     "redux-thunk": "^2.3.0",
     "react-redux": "^7.0.3",
     "react-beautiful-dnd": "^13.0.0",
+    "redux-devtools-extension": "^2.13.8",
     "uid": "0.0.2"
   },
   "devDependencies": {
@@ -57,6 +58,7 @@
     "redux-thunk": "^2.3.0",
     "react-redux": "^7.0.3",
     "react-beautiful-dnd": "^13.0.0",
+    "redux-devtools-extension": "^2.13.8",
     "uid": "0.0.2"
   },
   "files": [
