@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-// import uid from "uid";
+import uid from 'uid'
 // import "./FormBuilderControlButtons.css";
 // import { connect } from "react-redux";
 // import {
@@ -16,6 +16,10 @@ import React, { useState, useEffect } from 'react'
 // 	addAddressElement,
 // } from "../../redux/actions/form-action/formControlActions";
 import { displayControls } from '../../utils/form-controls.utils'
+import ShortTextIcon from '../../icons/Short-text.icons'
+import LongTextIcon from '../../icons/Long-text.icons'
+import EmailIcon from '../../icons/Email.icons'
+import LinkIcon from '../../icons/Link.icons'
 
 const FormBuilderControlButtons = (props) => {
   const [openDrawer, toggleDrawer] = useState(false)
@@ -43,7 +47,7 @@ const FormBuilderControlButtons = (props) => {
   }, [query])
 
   return (
-    <>
+    <React.Fragment>
       <section
         onMouseMove={(e) => {
           setMouseVerticalLocation(e.screenY)
@@ -65,7 +69,7 @@ const FormBuilderControlButtons = (props) => {
           }
         >
           <svg>
-            <use xlinkHref='/uploads/icons.svg#left-drop' />
+            <use xlinkHref='../../uploads/icons.svg#left-drop' />
           </svg>
         </button>
         <div className='add-form-fields-inner-wrapper'>
@@ -106,10 +110,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#short-text' />
-                  </svg>
-                  <span className='btn-title'>Short text</span>
+                  <span className='flx-dir-c'>
+                    <ShortTextIcon />
+                    <span className='btn-title'>Short text</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -127,7 +131,7 @@ const FormBuilderControlButtons = (props) => {
               </div>
             )}
             {controlList.includes('long text') && (
-              <div className='add-form-fields-item mt-1h'>
+              <div className='add-form-fields-item mt-1'>
                 <button
                   onClick={() =>
                     addElement(
@@ -140,10 +144,13 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#long-text' />
-                  </svg>
-                  <span className='btn-title'>Long text</span>
+                  {/* <svg>
+                    <use xlinkHref='./src/uploads/icons.svg#email' />
+                  </svg> */}
+                  <span className='flx-dir-c'>
+                    <LongTextIcon />
+                    <span className='btn-title'>Long text</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -168,10 +175,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#email' />
-                  </svg>
-                  <span className='btn-title'>Email</span>
+                  <span className='flx-dir-c'>
+                    <EmailIcon />
+                    <span className='btn-title'>Email</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -573,10 +580,10 @@ const FormBuilderControlButtons = (props) => {
                   onClick={() => addElement('links', uid(7), 'Links', 'Links')}
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#links' />
-                  </svg>
-                  <span className='btn-title'>Link</span>
+                  <span className='flx-dir-c'>
+                    <LinkIcon />
+                    <span className='btn-title'>Link</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -689,7 +696,7 @@ const FormBuilderControlButtons = (props) => {
           </div>
         </div>
       </section>
-    </>
+    </React.Fragment>
   )
 }
 

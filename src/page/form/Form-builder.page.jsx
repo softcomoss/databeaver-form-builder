@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import FormBuilderControlButtons from '../../containers/forms-module/Builder-control-button.container'
-import PageSwitcher from '../../containers/forms-module/Page-switcher.container'
+// import PageSwitcher from '../../containers/forms-module/Page-switcher.container'
 // import { connect } from 'react-redux'
 // import { toast } from 'react-toastify'
 // import { showModal, closeModal } from '../../utils/modal-control.utils'
@@ -131,10 +131,10 @@ class Builder extends Component {
                   </li>
                 </ul>
                 <div className='pos-rel mt-2'>
-                  <PageSwitcher />
+                  {/* <PageSwitcher /> */}
 
                   <ul className='input-list-wrapper uk-switcher my-0 '>
-                    <FormElementDisplay />
+                    {/* <FormElementDisplay /> */}
                   </ul>
 
                   <div className='form-extras'>
@@ -189,7 +189,7 @@ class Builder extends Component {
                                 className='uk-modal'
                               >
                                 <div className='uk-modal-dialog uk-margin-auto-vertical border-radius'>
-                                  <ModalCloseButton />
+                                  {/* <ModalCloseButton /> */}
                                   <h2 className='uk-modal-title'>
                                     {' '}
                                     Generate link
@@ -219,7 +219,7 @@ class Builder extends Component {
                                           </span>
                                         </label>
                                       ) : (
-                                        <>
+                                        <React.Fragment>
                                           <label className='label'>
                                             Select Project
                                           </label>
@@ -250,7 +250,7 @@ class Builder extends Component {
                                               </option>
                                             )} */}
                                           </select>
-                                        </>
+                                        </React.Fragment>
                                       )}
                                     </div>
                                     {/* <button
@@ -330,7 +330,7 @@ class Builder extends Component {
                                 className='uk-modal'
                               >
                                 <div className='uk-modal-dialog uk-margin-auto-vertical border-radius'>
-                                  <ModalCloseButton />
+                                  {/* <ModalCloseButton /> */}
                                   <h2 className='uk-modal-title'>
                                     {' '}
                                     Generate link
@@ -496,8 +496,8 @@ class Builder extends Component {
                         style={{ display: 'block' }}
                       >
                         <div className='uk-modal-dialog'>
-                          <ModalCloseButton />
-                          <PreviewForm />
+                          {/* <ModalCloseButton /> */}
+                          {/* <PreviewForm /> */}
                         </div>
                       </div>
                     </div>
