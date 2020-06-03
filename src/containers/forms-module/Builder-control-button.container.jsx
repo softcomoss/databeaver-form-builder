@@ -20,6 +20,17 @@ import ShortTextIcon from '../../icons/Short-text.icons'
 import LongTextIcon from '../../icons/Long-text.icons'
 import EmailIcon from '../../icons/Email.icons'
 import LinkIcon from '../../icons/Link.icons'
+import DateIcon from '../../icons/Date.icons'
+import TimeIcon from '../../icons/Time.icons'
+import PhoneIcon from '../../icons/Phone.icons'
+import NumberIcon from '../../icons/Number.icon'
+import ImageCaptureIcon from '../../icons/Image-capture.icon'
+import SingleChoiceIcon from '../../icons/Single-choice.icons'
+import MultiChoiceIcon from '../../icons/Multi-choice.icons'
+import LocationIcon from '../../icons/Location.icon'
+import AreaMapIcon from '../../icons/Area-map.icons'
+import RatingIcon from '../../icons/Rating.icon'
+import BiometricIcon from '../../icons/Biometric.icons'
 
 const FormBuilderControlButtons = (props) => {
   const [openDrawer, toggleDrawer] = useState(false)
@@ -200,10 +211,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#date' />
-                  </svg>
-                  <span className='btn-title'>Date</span>
+                  <span className='flx-dir-c'>
+                    <DateIcon />
+                    <span className='btn-title'>Date</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -228,10 +239,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#time' />
-                  </svg>
-                  <span className='btn-title'>Time</span>
+                  <span className='flx-dir-c'>
+                    <TimeIcon />
+                    <span className='btn-title'>Time</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -293,9 +304,7 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#ratings' />
-                  </svg>
+                  <RatingIcon />
                   <span className='btn-title'>Ratings</span>
                 </button>
                 <div
@@ -327,10 +336,14 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#phone' />
-                  </svg>
-                  <span className='btn-title'>Phone number</span>
+                  {/* <span>
+                    <PhoneIcon />
+                    <span className='btn-title'>Phone number</span>
+                  </span> */}
+                  <span className='flx-dir-c'>
+                    <PhoneIcon />
+                    <span className='btn-title'>Phone </span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -361,10 +374,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#number' />
-                  </svg>
-                  <span className='btn-title'>Number</span>
+                  <span className='flx-dir-c'>
+                    <NumberIcon />
+                    <span className='btn-title'>Number</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -395,9 +408,7 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#multi-choice' />
-                  </svg>
+                  <MultiChoiceIcon />
                   <span className='btn-title'>Multiple choice</span>
                 </button>
                 <div
@@ -429,10 +440,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#image-choice' />
-                  </svg>
-                  <span className='btn-title'>Image capture</span>
+                  <span className='flx-dir-c'>
+                    <ImageCaptureIcon />
+                    <span className='btn-title'>Image Capture</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -463,10 +474,11 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#single-option' />
-                  </svg>
-                  <span className='btn-title'>Single choice</span>
+                  {/* here */}
+                  <span>
+                    <SingleChoiceIcon />
+                    <span className='btn-title'>Single choice</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -496,9 +508,7 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#location' />
-                  </svg>
+                  <LocationIcon />
                   <span className='btn-title'>Location</span>
                 </button>
                 <div
@@ -523,9 +533,7 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#area-map' />
-                  </svg>
+                  <AreaMapIcon />
                   <span className='btn-title'>Area map</span>
                 </button>
                 <div
@@ -610,9 +618,7 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#biometric' />
-                  </svg>
+                  <BiometricIcon />
                   <span className='btn-title'>biometric</span>
                 </button>
                 <div

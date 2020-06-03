@@ -3537,7 +3537,6 @@ h4,
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  padding: 1rem 1.5rem;
 }
 .fields-btn-ls:hover {
   box-shadow: none;
