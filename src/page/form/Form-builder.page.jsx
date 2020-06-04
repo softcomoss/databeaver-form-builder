@@ -5,7 +5,7 @@ import PageSwitcher from '../../containers/forms-module/Page-switcher.container'
 // import { toast } from 'react-toastify'
 // import { showModal, closeModal } from '../../utils/modal-control.utils'
 
-// import FormElementDisplay from '../../containers/forms-module/Form-elements-display.container'
+import FormElementDisplay from '../../containers/forms-module/Form-elements-display.container'
 // import RenameForm from '../../containers/forms-module/Rename-form.container'
 // import PreviewForm from '../../containers/forms-module/Preview-form.container'
 // import {
@@ -134,7 +134,7 @@ class Builder extends Component {
                   <PageSwitcher />
 
                   <ul className='input-list-wrapper uk-switcher my-0 '>
-                    {/* <FormElementDisplay /> */}
+                    <FormElementDisplay />
                   </ul>
 
                   <div className='form-extras'>
@@ -233,14 +233,14 @@ class Builder extends Component {
                                               allProjects.projects.map(
                                                 (project, i) => {
                                                   return (
-                                                    <>
+                                                    <React.Fragment>
                                                       <option
                                                         key={i}
                                                         value={project._id}
                                                       >
                                                         {project.name}
                                                       </option>
-                                                    </>
+                                                    </React.Fragment>
                                                   )
                                                 }
                                               )
