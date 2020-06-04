@@ -106,32 +106,33 @@ const Biometric = (props) => {
                 title
                 aria-expanded='false'
               >
-                <svg
-                  style={
-                    elementDetails.isMandatory
-                      ? { color: '#0081c2' }
-                      : { color: '#666' }
-                  }
+                <span
+                  style={{
+                    color:
+                      elementIsMandatory &&
+                      elementDetails.unique_id === activeElement
+                        ? '#0081c2'
+                        : '#666',
+                    fontSize: '34px',
+                    paddingTop: '14px'
+                  }}
                 >
-                  <use xlinkHref='/uploads/icons.svg#required' />
-                </svg>
+                  *
+                </span>
               </button>
-              <button
+              <span
                 onClick={() => {
                   toggleSettings(!settingsDisplay)
                 }}
-                className='d-flx-alc-jc settings-btn'
-              >
-                <svg>
-                  <use xlinkHref='/uploads/icons.svg#settings' />
-                </svg>
-              </button>
+                style={{ cursor: 'pointer', paddingRight: '10px' }}
+                data-uk-icon='icon: cog'
+              ></span>
               <div className='uk-inline'>
-                <button className='d-flx-alc-jc' type='button'>
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#more-hor' />
-                  </svg>
-                </button>
+                <span
+                  aria-expanded='false'
+                  style={{ cursor: 'pointer' }}
+                  data-uk-icon='icon: more-vertical'
+                ></span>
                 <div
                   uk-dropdown='mode: click'
                   className='drop-wrapper px-1h uk-dropdown'

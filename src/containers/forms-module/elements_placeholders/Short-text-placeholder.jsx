@@ -150,9 +150,7 @@ const ShortText = (props) => {
               ></span>
               <div className='uk-inline'>
                 <span
-                  onClick={() => {
-                    toggleSettings(!settingsDisplay)
-                  }}
+                  aria-expanded='false'
                   style={{ cursor: 'pointer' }}
                   data-uk-icon='icon: more-vertical'
                 ></span>

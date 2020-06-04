@@ -98,22 +98,19 @@ const DefaultText = (props) => {
               />
             </div>
             <div className='action-btn-wrapper d-flx-alc'>
-              <button
+              <span
                 onClick={() => {
                   toggleSettings(!settingsDisplay)
                 }}
-                className='d-flx-alc-jc settings-btn'
-              >
-                <svg>
-                  <use xlinkHref='/uploads/icons.svg#settings' />
-                </svg>
-              </button>
+                style={{ cursor: 'pointer', paddingRight: '10px' }}
+                data-uk-icon='icon: cog'
+              ></span>
               <div className='uk-inline'>
-                <button className='d-flx-alc-jc' type='button'>
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#more-hor' />
-                  </svg>
-                </button>
+                <span
+                  aria-expanded='false'
+                  style={{ cursor: 'pointer' }}
+                  data-uk-icon='icon: more-vertical'
+                ></span>
                 <div
                   uk-dropdown='mode: click'
                   className='drop-wrapper px-1h uk-dropdown'
