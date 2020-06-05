@@ -25,8 +25,8 @@ import {
 } from '../../../redux/actions/form-action/formPropertyActions'
 import FormLogic from '../Form-logic.container'
 import 'antd/dist/antd.css'
-import { Upload, message, Button } from 'antd'
-import { UploadOutlined } from '@ant-design/icons'
+// import { Upload, message, Button } from 'antd'
+// import { UploadOutlined } from '@ant-design/icons'
 import { nameShortner } from '../../../utils/card-name-shortener.utils'
 import { baseURL } from '../../../utils/base-url-switch.utils'
 import MultiChoiceIcon from '../../../icons/Multi-choice.icons'
@@ -114,25 +114,25 @@ const MultipleChoice = (props) => {
     }
   }
 
-  const token = JSON.parse(window.localStorage.getItem('__beav')).token
-  const upload = {
-    name: 'files',
-    accept: 'image/*',
-    showUploadList: false,
-    action: `${baseURL}/files`,
-    headers: {
-      authorization: `Bearer ${token}`
-    },
-    data: { folder: 'admin-profile' },
-    onChange(info) {
-      if (info.file.status === 'done') {
-        setOptionUrl(info.file.response.data[0])
-        message.success(`${info.file.name} file uploaded successfully`)
-      } else if (info.file.status === 'error') {
-        message.error(`${info.file.name} file upload failed.`)
-      }
-    }
-  }
+  // const token = JSON.parse(window.localStorage.getItem('__beav')).token
+  // const upload = {
+  //   name: 'files',
+  //   accept: 'image/*',
+  //   showUploadList: false,
+  //   action: `${baseURL}/files`,
+  //   headers: {
+  //     authorization: `Bearer ${token}`
+  //   },
+  //   data: { folder: 'admin-profile' },
+  //   onChange(info) {
+  //     if (info.file.status === 'done') {
+  //       setOptionUrl(info.file.response.data[0])
+  //       message.success(`${info.file.name} file uploaded successfully`)
+  //     } else if (info.file.status === 'error') {
+  //       message.error(`${info.file.name} file upload failed.`)
+  //     }
+  //   }
+  // }
 
   const onCloseModal = () => {
     closeModal(`#change-type-${elementDetails.unique_id}`)
@@ -333,7 +333,7 @@ const MultipleChoice = (props) => {
                   className='upload-btn btn btn-null-fill'
                   htmlFor='upload-prefill'
                 >
-                  <Upload {...upload}>
+                  {/* <Upload {...upload}>
                     <Button>
                       <UploadOutlined
                         onChange={(e) =>
@@ -341,7 +341,7 @@ const MultipleChoice = (props) => {
                         }
                       />
                     </Button>
-                  </Upload>
+                  </Upload> */}
                 </label>
               )}
               <button

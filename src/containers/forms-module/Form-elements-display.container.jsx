@@ -10,7 +10,7 @@ import Rating from './elements_placeholders/Rating-placeholder'
 import PhoneNumber from './elements_placeholders/Phone-number-placeholder'
 import Numbers from './elements_placeholders/Numbers-placeholder'
 import ImageChoice from './elements_placeholders/Image-choice-placeholder'
-// import SingleChoice from "./elements_placeholders/Single-choice-placeholder";
+import SingleChoice from './elements_placeholders/Single-choice-placeholder'
 import Location from './elements_placeholders/Location-placeholder'
 import FileUpload from './elements_placeholders/File-upload-placeholder'
 import Agreement from './elements_placeholders/Agreement-placeholder'
@@ -241,13 +241,15 @@ const FormElementDisplay = (props) => {
                             )}
                           />
                         )}
-                        {/* {element.type === "singleChoice" && (
-													<SingleChoice
-														elementDetails={element}
-														index={index}
-														serialNumber={currentIndex.indexOf(element.unique_id)}
-													/>
-												)} */}
+                        {element.type === 'singleChoice' && (
+                          <SingleChoice
+                            elementDetails={element}
+                            index={index}
+                            serialNumber={currentIndex.indexOf(
+                              element.unique_id
+                            )}
+                          />
+                        )}
                         {element.type === 'locationMap' && (
                           <Location
                             elementDetails={element}
