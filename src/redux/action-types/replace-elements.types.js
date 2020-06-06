@@ -1,1 +1,0 @@
-export const REPLACE_ELEMENT = "REPLACE_ELEMENT";
