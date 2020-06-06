@@ -82,7 +82,7 @@ import {
   REORDER_CURRENT_VIEW,
   DUPLICATE_ELEMENT
 } from '../action-types/form-builder-actions.types'
-import { REPLACE_ELEMENT } from '../action-types/replace-elements.types'
+import { replaceElementTypes } from '../action-types/replace-elements.types'
 
 const INITIAL_STATE = {
   allFormsCreated: [],
@@ -326,7 +326,7 @@ export default function (state = INITIAL_STATE, action) {
         activeSection: 'Section 1'
       }
       break
-    case REPLACE_ELEMENT:
+    case replaceElementTypes.REPLACE_ELEMENT:
       let stateToReplaceElement = [...state.formdata]
       stateToReplaceElement.map((elem, i) => {
         if (elem.label === action.activePage) {
@@ -1272,16 +1272,6 @@ export default function (state = INITIAL_STATE, action) {
       return {
         ...state,
         quickDispatch: quickDispatchStartDateAdded
-      }
-      break
-
-    case QUICK_DISPATCH_DUE_DATE:
-      let quickDispatchDueDateAdded = { ...state.quickDispatch }
-      let formattedDueDate = new Date(action.payload.date).toISOString()
-      quickDispatchDueDateAdded.dueDate = formattedDueDate
-      return {
-        ...state,
-        quickDispatch: quickDispatchDueDateAdded
       }
       break
 

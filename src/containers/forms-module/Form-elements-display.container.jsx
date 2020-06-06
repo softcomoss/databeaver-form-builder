@@ -24,7 +24,7 @@ import {
   deleteSection
 } from '../../redux/actions/form-action/form.actions'
 
-// import MultipleChoice from "./elements_placeholders/Multiple-choice-placeholder";
+import MultipleChoice from './elements_placeholders/Multiple-choice-placeholder'
 import Biometric from './elements_placeholders/Biometric-placeholder'
 import AreaMap from './elements_placeholders/AreaMap-placeholder'
 import DefaultText from './elements_placeholders/Default-text-placeholder'
@@ -225,13 +225,15 @@ const FormElementDisplay = (props) => {
                             )}
                           />
                         )}
-                        {/* {element.type === "multiChoice" && (
-													<MultipleChoice
-														elementDetails={element}
-														index={index}
-														serialNumber={currentIndex.indexOf(element.unique_id)}
-													/>
-												)} */}
+                        {element.type === 'multiChoice' && (
+                          <MultipleChoice
+                            elementDetails={element}
+                            index={index}
+                            serialNumber={currentIndex.indexOf(
+                              element.unique_id
+                            )}
+                          />
+                        )}
                         {element.type === 'imageCapture' && (
                           <ImageChoice
                             elementDetails={element}

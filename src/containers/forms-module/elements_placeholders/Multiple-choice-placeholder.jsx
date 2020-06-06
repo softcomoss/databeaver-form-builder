@@ -24,7 +24,7 @@ import {
   duplicateElement
 } from '../../../redux/actions/form-action/formPropertyActions'
 import FormLogic from '../Form-logic.container'
-import 'antd/dist/antd.css'
+// import 'antd/dist/antd.css'
 // import { Upload, message, Button } from 'antd'
 // import { UploadOutlined } from '@ant-design/icons'
 import { nameShortner } from '../../../utils/card-name-shortener.utils'
