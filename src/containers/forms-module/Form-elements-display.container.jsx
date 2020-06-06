@@ -46,7 +46,8 @@ const FormElementDisplay = (props) => {
     setActiveSection,
     deleteSection,
     reOderCurrentView,
-    currentView
+    currentView,
+    uploadAddress
   } = props
 
   useEffect(() => {
@@ -232,6 +233,7 @@ const FormElementDisplay = (props) => {
                             serialNumber={currentIndex.indexOf(
                               element.unique_id
                             )}
+                            uploadAddress={uploadAddress}
                           />
                         )}
                         {element.type === 'imageCapture' && (

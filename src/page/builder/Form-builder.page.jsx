@@ -134,7 +134,9 @@ class Builder extends Component {
                   <PageSwitcher />
 
                   <ul className='input-list-wrapper uk-switcher my-0 '>
-                    <FormElementDisplay />
+                    <FormElementDisplay
+                      uploadAddress={this.props.uploadAddress}
+                    />
                   </ul>
 
                   <div className='form-extras'>

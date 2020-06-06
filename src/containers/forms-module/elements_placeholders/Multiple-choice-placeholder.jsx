@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
 import uid from 'uid'
+import { uploadImage } from '../../../utils/image-upload.utils'
 import {
   deleteElement,
   setActiveElement
@@ -55,7 +56,8 @@ const MultipleChoice = (props) => {
     deleteMultichoiceOption,
     toggleWithPhoto,
     duplicateElement,
-    serialNumber
+    serialNumber,
+    uploadAddress
   } = props
 
   let elementLabel = ''
@@ -85,10 +87,7 @@ const MultipleChoice = (props) => {
 
   const enterButton = (event, callback) => {
     if (event.keyCode === 13) {
-      if (optionLabel.length > 0 && optionLabel.trim() !== '') {
-        addMultiChoiceOption(optionsWithPhoto, optionLabel, optionUrl)
-        callback()
-      }
+      addOption()
     }
   }
 
@@ -114,28 +113,21 @@ const MultipleChoice = (props) => {
     }
   }
 
-  // const token = JSON.parse(window.localStorage.getItem('__beav')).token
-  // const upload = {
-  //   name: 'files',
-  //   accept: 'image/*',
-  //   showUploadList: false,
-  //   action: `${baseURL}/files`,
-  //   headers: {
-  //     authorization: `Bearer ${token}`
-  //   },
-  //   data: { folder: 'admin-profile' },
-  //   onChange(info) {
-  //     if (info.file.status === 'done') {
-  //       setOptionUrl(info.file.response.data[0])
-  //       message.success(`${info.file.name} file uploaded successfully`)
-  //     } else if (info.file.status === 'error') {
-  //       message.error(`${info.file.name} file upload failed.`)
-  //     }
-  //   }
-  // }
-
   const onCloseModal = () => {
     closeModal(`#change-type-${elementDetails.unique_id}`)
+  }
+
+  const onUploadFile = async (file) => {
+    setUploading(true)
+    if (uploadAddress) {
+      const upload = await uploadImage(file, uploadAddress)
+      if (upload) {
+        setOptionUrl(upload[0])
+      }
+    } else {
+      console.log('Missing upload address property')
+    }
+    setUploading(false)
   }
 
   return (
@@ -329,20 +321,11 @@ const MultipleChoice = (props) => {
                 </label>
               </div>
               {elementDetails.withPhoto && (
-                <label
-                  className='upload-btn btn btn-null-fill'
-                  htmlFor='upload-prefill'
-                >
-                  {/* <Upload {...upload}>
-                    <Button>
-                      <UploadOutlined
-                        onChange={(e) =>
-                          console.log('file', e.file, e.fileList)
-                        }
-                      />
-                    </Button>
-                  </Upload> */}
-                </label>
+                <input
+                  onChange={(e) => onUploadFile(e.target.files[0])}
+                  type='file'
+                  accept='*images'
+                />
               )}
               <button
                 onClick={() => {
