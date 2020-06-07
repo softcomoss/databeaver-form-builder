@@ -374,6 +374,21 @@ const Numbers = (props) => {
                   />
                   <span>Hidden</span>
                 </label>
+                <label className='input-check'>
+                  <input
+                    className='uk-checkbox'
+                    type='checkbox'
+                    onClick={(e) => {
+                      toggleBooleanState(
+                        e.target.checked,
+                        'validated',
+                        elementDetails.unique_id
+                      )
+                    }}
+                    checked={elementDetails.validated}
+                  />
+                  <span>Validated</span>
+                </label>
               </div>
             </div>
             {elementDetails.formattedNumeric === true && (

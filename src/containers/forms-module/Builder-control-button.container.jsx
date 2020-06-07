@@ -81,9 +81,11 @@ const FormBuilderControlButtons = (props) => {
               : 'add-form-fields-drawer toggler open-drawer'
           }
         >
-          <svg>
-            <use xlinkHref='../../uploads/icons.svg#left-drop' />
-          </svg>
+          {openDrawer ? (
+            <span uk-icon='icon: shrink; ratio: 2'></span>
+          ) : (
+            <span uk-icon='icon: expand; ratio: 2'></span>
+          )}
         </button>
         <div className='add-form-fields-inner-wrapper'>
           <div className='search-form-fields'>
@@ -93,14 +95,10 @@ const FormBuilderControlButtons = (props) => {
               }}
               className='search-btn toggler'
             >
-              <svg>
-                <use href='/uploads/icons.svg#search' />
-              </svg>
+              <span uk-icon='search'></span>
             </button>
             <label className='search'>
-              <svg>
-                <use href='/uploads/icons.svg#search' />
-              </svg>
+              <span uk-icon='search'></span>
               <input
                 onChange={(e) => setQuery(e.target.value)}
                 type='search'
@@ -272,8 +270,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <LocationIcon />
-                  <span className='btn-title'>Address</span>
+                  <span>
+                    <LocationIcon />
+                    <span className='btn-title'>Address</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -301,8 +301,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <RatingIcon />
-                  <span className='btn-title'>Ratings</span>
+                  <span>
+                    <RatingIcon />
+                    <span className='btn-title'>Ratings</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
