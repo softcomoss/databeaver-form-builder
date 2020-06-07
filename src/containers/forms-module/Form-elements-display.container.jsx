@@ -252,6 +252,7 @@ const FormElementDisplay = (props) => {
                             serialNumber={currentIndex.indexOf(
                               element.unique_id
                             )}
+                            uploadAddress={uploadAddress}
                           />
                         )}
                         {element.type === 'locationMap' && (

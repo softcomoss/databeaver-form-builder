@@ -24,12 +24,9 @@ import {
   duplicateElement
 } from '../../../redux/actions/form-action/formPropertyActions'
 import FormLogic from '../Form-logic.container'
-// import 'antd/dist/antd.css'
-// import { Upload, message, Button } from 'antd'
-// import { UploadOutlined } from '@ant-design/icons'
 import { nameShortner } from '../../../utils/card-name-shortener.utils'
-import { baseURL } from '../../../utils/base-url-switch.utils'
 import SingleChoiceIcon from '../../../icons/Single-choice.icons'
+import { uploadImage } from '../../../utils/image-upload.utils'
 
 const SingleChoice = (props) => {
   const [settingsDisplay, toggleSettings] = useState(false)
@@ -55,7 +52,8 @@ const SingleChoice = (props) => {
     deleteMultichoiceOption,
     toggleWithPhoto,
     duplicateElement,
-    serialNumber
+    serialNumber,
+    uploadAddress
   } = props
 
   let elementLabel = ''
@@ -83,24 +81,17 @@ const SingleChoice = (props) => {
     }
   })
 
-  const uploadImage = (photo) => {
+  const onUploadFile = async (file) => {
     setUploading(true)
-    const data = new FormData()
-    data.append('files', photo)
-    data.append('folder', 'admin-profile')
-    const config = { headers: { 'Content-Type': 'multipart/form-data' } }
-    axios
-      .post(`/files`, data, config)
-      .then((response) => {
-        if (response.data !== undefined && response.data.success === true) {
-          setOptionUrl(response.data.data[0])
-        }
-        setUploading(false)
-      })
-      .catch((error) => {
-        setUploading(false)
-        console.log(error)
-      })
+    if (uploadAddress) {
+      const upload = await uploadImage(file, uploadAddress)
+      if (upload) {
+        setOptionUrl(upload[0])
+      }
+    } else {
+      console.log('Missing upload address property')
+    }
+    setUploading(false)
   }
 
   const enterButton = (event, callback) => {
@@ -348,20 +339,11 @@ const SingleChoice = (props) => {
                 </label>
               </div>
               {optionsWithPhoto && (
-                <label
-                  className='upload-btn btn btn-null-fill'
-                  htmlFor='upload-prefill'
-                >
-                  {/* <Upload {...upload}>
-                    <Button>
-                      <UploadOutlined
-                        onChange={(e) =>
-                          console.log('file', e.file, e.fileList)
-                        }
-                      />
-                    </Button>
-                  </Upload> */}
-                </label>
+                <input
+                  onChange={(e) => onUploadFile(e.target.files[0])}
+                  type='file'
+                  accept='*images'
+                />
               )}
               <button
                 onClick={() => {

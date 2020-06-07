@@ -25,11 +25,8 @@ import {
   duplicateElement
 } from '../../../redux/actions/form-action/formPropertyActions'
 import FormLogic from '../Form-logic.container'
-// import 'antd/dist/antd.css'
-// import { Upload, message, Button } from 'antd'
-// import { UploadOutlined } from '@ant-design/icons'
+
 import { nameShortner } from '../../../utils/card-name-shortener.utils'
-import { baseURL } from '../../../utils/base-url-switch.utils'
 import MultiChoiceIcon from '../../../icons/Multi-choice.icons'
 
 const MultipleChoice = (props) => {
@@ -324,7 +321,7 @@ const MultipleChoice = (props) => {
                 <input
                   onChange={(e) => onUploadFile(e.target.files[0])}
                   type='file'
-                  accept='*images'
+                  accept='image/*'
                 />
               )}
               <button

@@ -157,9 +157,6 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  {/* <svg>
-                    <use xlinkHref='./src/uploads/icons.svg#email' />
-                  </svg> */}
                   <span className='flx-dir-c'>
                     <LongTextIcon />
                     <span className='btn-title'>Long text</span>
@@ -408,8 +405,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <MultiChoiceIcon />
-                  <span className='btn-title'>Multiple choice</span>
+                  <span>
+                    <MultiChoiceIcon />
+                    <span className='btn-title'>Multiple choice</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -508,8 +507,11 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <LocationIcon />
-                  <span className='btn-title'>Location</span>
+                  <span>
+                    {' '}
+                    <LocationIcon />
+                    <span className='btn-title'>Location</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -533,8 +535,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <AreaMapIcon />
-                  <span className='btn-title'>Area map</span>
+                  <span>
+                    <AreaMapIcon />
+                    <span className='btn-title'>Area map</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -565,8 +569,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <FileUploadIcon />
-                  <span className='btn-title'>File upload</span>
+                  <span>
+                    <FileUploadIcon />
+                    <span className='btn-title'>File upload</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -616,8 +622,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <BiometricIcon />
-                  <span className='btn-title'>biometric</span>
+                  <span>
+                    <BiometricIcon />
+                    <span className='btn-title'>biometric</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -647,8 +655,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <AgreementIcon />
-                  <span className='btn-title'>Agreement</span>
+                  <span>
+                    <AgreementIcon />
+                    <span className='btn-title'>Agreement</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -678,10 +688,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#short-text' />
-                  </svg>
-                  <span className='btn-title'>Default Text</span>
+                  <span>
+                    <ShortTextIcon />
+                    <span className='btn-title'>Default Text</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
