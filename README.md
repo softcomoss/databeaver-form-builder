@@ -13,16 +13,24 @@ npm install --save databeaver-form-builder
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
 
-import MyComponent from 'databeaver-form-builder'
-import 'databeaver-form-builder/dist/index.css'
+import { FormBuilder } from 'databeaver-form-builder'
+import 'databeaver-form-builder/dist/styles/uikit.css'
+import 'databeaver-form-builder/dist/styles/style.css'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
+const App = (props) => {
+  const onSaveForm = (data) => {
+    console.log(data)
+
+    return data
   }
+  return (
+    <FormBuilder uploadAddress={'upload-url'} {...props} onSave={onSaveForm} />
+  )
 }
+
+export default App
 ```
 
 ## Styling
@@ -31,10 +39,9 @@ import the following styles
 
 ```bash
 import 'databeaver-form-builder/dist/styles/uikit.min.css'
-import 'databeaver-form-builder/dist/styles/device.min.css'
 import 'databeaver-form-builder/dist/styles/style.css'
 ```
 
 ## License
 
-MIT © [w3bh4ck](https://github.com/w3bh4ck)
+<!-- MIT © [w3bh4ck](https://github.com/w3bh4ck) -->
