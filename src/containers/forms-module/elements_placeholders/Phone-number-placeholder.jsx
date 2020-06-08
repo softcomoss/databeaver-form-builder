@@ -260,7 +260,7 @@ const PhoneNumber = (props) => {
                   <input
                     className='uk-checkbox'
                     type='checkbox'
-                    onClick={(e) => {
+                    onChange={(e) => {
                       toggleBooleanState(
                         e.target.checked,
                         'enabled',
@@ -275,7 +275,7 @@ const PhoneNumber = (props) => {
                   <input
                     className='uk-checkbox'
                     type='checkbox'
-                    onClick={(e) => {
+                    onChange={(e) => {
                       toggleBooleanState(
                         e.target.checked,
                         'hidden',
@@ -290,7 +290,7 @@ const PhoneNumber = (props) => {
                   <input
                     className='uk-checkbox'
                     type='checkbox'
-                    onClick={(e) => {
+                    onChange={(e) => {
                       toggleBooleanState(
                         e.target.checked,
                         'validated',

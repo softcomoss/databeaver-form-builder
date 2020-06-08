@@ -24,34 +24,32 @@ const PageSwitcher = (props) => {
     currentView
   } = props
   return (
-    <ul uk-tab className='my-0 form-tabs uk-tab'>
+    <ul className='my-0 form-tabs uk-tab'>
       {formdata.map((page, i) => {
         return (
-          <React.Fragment>
-            <li
-              onClick={() => {
-                setActivePage(i)
-              }}
-              key={i}
-              className={
-                activePage.split(' ')[1] == i + 1
-                  ? 'form-tab-link uk-active'
-                  : 'form-tab-link'
-              }
-              aria-expanded='true'
-            >
-              <a className='tab-link'>
-                <span>page {i + 1}</span>
-                <span
-                  onClick={() => {
-                    deletePage(i, formdata.length)
-                  }}
-                >
-                  <PageCloseIcon />
-                </span>
-              </a>
-            </li>
-          </React.Fragment>
+          <li
+            onClick={() => {
+              setActivePage(i)
+            }}
+            key={i}
+            className={
+              activePage.split(' ')[1] == i + 1
+                ? 'form-tab-link uk-active'
+                : 'form-tab-link'
+            }
+            aria-expanded='true'
+          >
+            <a className='tab-link'>
+              <span>page {i + 1}</span>
+              <span
+                onClick={() => {
+                  deletePage(i, formdata.length)
+                }}
+              >
+                <span className='pl-1' data-uk-icon='close'></span>
+              </span>
+            </a>
+          </li>
         )
       })}
       <li className='add-new-page' aria-expanded='false'>
@@ -62,9 +60,7 @@ const PageSwitcher = (props) => {
           }}
           className='bg-transparent '
         >
-          <svg>
-            <use xlinkHref='/uploads/icons.svg#plus' />
-          </svg>
+          <span data-uk-icon='plus'></span>
           <span>New page</span>
         </button>
       </li>

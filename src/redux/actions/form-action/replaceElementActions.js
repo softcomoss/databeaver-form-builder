@@ -1,8 +1,5 @@
 import { replaceElementTypes } from '../../action-types/replace-elements.types'
-import {
-  SET_ACTIVE_ELEMENT,
-  UPDATE_ELEMENT_VIEW
-} from '../../action-types/form-builder-actions.types'
+import { formBuilderActionTypes } from '../../action-types/form-builder-actions.types'
 import uid from 'uid'
 
 export const replaceElement = (elementType, index, activePage) => (
@@ -143,12 +140,12 @@ export const replaceElement = (elementType, index, activePage) => (
     })
   }
   dispatch({
-    type: SET_ACTIVE_ELEMENT,
+    type: formBuilderActionTypes.SET_ACTIVE_ELEMENT,
     payload: {
       uniqueId: id
     }
   })
   dispatch({
-    type: UPDATE_ELEMENT_VIEW
+    type: formBuilderActionTypes.UPDATE_ELEMENT_VIEW
   })
 }

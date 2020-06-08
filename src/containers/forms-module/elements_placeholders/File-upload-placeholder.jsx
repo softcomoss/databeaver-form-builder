@@ -254,7 +254,7 @@ const FileUpload = (props) => {
                   <input
                     className='uk-checkbox'
                     type='checkbox'
-                    onClick={(e) => {
+                    onChange={(e) => {
                       toggleBooleanState(
                         e.target.checked,
                         'enabled',
@@ -269,7 +269,7 @@ const FileUpload = (props) => {
                   <input
                     className='uk-checkbox'
                     type='checkbox'
-                    onClick={(e) => {
+                    onChange={(e) => {
                       toggleBooleanState(
                         e.target.checked,
                         'hidden',
@@ -284,7 +284,7 @@ const FileUpload = (props) => {
                   <input
                     className='uk-checkbox'
                     type='checkbox'
-                    onClick={(e) => {
+                    onChange={(e) => {
                       toggleBooleanState(
                         e.target.checked,
                         'validated',

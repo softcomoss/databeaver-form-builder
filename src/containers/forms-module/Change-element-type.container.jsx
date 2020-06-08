@@ -5,7 +5,6 @@ import { replaceElement } from '../../redux/actions/form-action/replaceElementAc
 
 const ChangeElementType = ({
   replaceElement,
-  elementType,
   index,
   activePage,
   closeModal
@@ -15,7 +14,7 @@ const ChangeElementType = ({
       {/* <ModalCloseButton /> */}
       <h2 className='uk-modal-title'> Select new element type</h2>
       <div className='uk-modal-body mb-2'>
-        <label htmlFor className='inp-select mt-2'>
+        <label className='inp-select mt-2'>
           <span className='label'></span>
           <select
             onChange={(e) => {

@@ -1,87 +1,4 @@
-import {
-  ADD_ELEMENT,
-  CHANGE_FORM_NAME,
-  CHANGE_FORM_DESCRIPTION,
-  ADD_PAGE,
-  DELETE_PAGE,
-  SET_ACTIVE_PAGE,
-  ADD_SECTION,
-  SET_ACTIVE_SECTION,
-  DELETE_SECTION,
-  UPDATE_ELEMENT_VIEW,
-  SET_ACTIVE_ELEMENT,
-  DELETE_ELEMENT,
-  EDIT_ELEMENT_LABEL,
-  ADD_ELEMENT_DESCRIPTION,
-  ADD_ELEMENT_HINT,
-  ADD_ELEMENT_FORMAT,
-  ADD_RATING_ELEMENT,
-  CONFIGURE_RATING,
-  EDIT_RATING_LABEL,
-  ADD_MULTICHOICE_ELEMENT,
-  EDIT_MULTICHOICE_OPTIONS_LABEL,
-  ADD_MULTICHOICE_OPTION,
-  DELETE_MULTICHOICE_OPTION,
-  ADD_MULTICHOICE_WITH_PHOTO_OPTION,
-  ADD_HYBRID_GEOLOCATION,
-  TOGGLE_BOOLEAN,
-  ADD_EMBEDDED_PHOTO,
-  ADD_SINGLE_PHOTO,
-  ADD_MULTI_PHOTO,
-  OPEN_FIELD_RULES,
-  CLOSE_FIELD_RULES,
-  ADD_MULTICHOICE_WITH_PHOTO,
-  ADD_NEW_FORM,
-  RENAME_FORM,
-  ADD_MAX_CHARS,
-  ADD_MIN_CHARS,
-  ADD_MAX_RATING,
-  GET_ALL_FORMS,
-  LOADING_ALL_FORMS,
-  LOADING_ALL_FORMS_COMPLETED,
-  GET_SINGLE_FORM_DETAIL,
-  NEW_NAME_FOR_FORM_EDIT,
-  GET_FORM_TO_EDIT,
-  PREVIEW_SINGLE_FORM,
-  LOADING_SINGLE_FORM,
-  LOADING_SINGLE_FORM_COMPLETED,
-  SAVING_FORM,
-  SAVE_FORM,
-  LOADING,
-  LOADING_COMPLETE,
-  INPUT_NEW_FORM_NAME,
-  GET_SINGLE_FORM,
-  TOGGLE_WITH_PHOTO,
-  ADD_RULE,
-  REMOVE_RULE,
-  SET_LOGIC_OPTION,
-  SET_CONDITION,
-  SET_VALUE,
-  SET_JUMP_TO,
-  SET_OTHERWISE,
-  EDIT_PLACEHOLDER,
-  QUICK_DISPATCH_NAME,
-  QUICK_DISPATCH_START_DATE,
-  QUICK_DISPATCH_DUE_DATE,
-  QUICK_DISPATCH_PROJECT,
-  QUICK_DISPATCH_FORM,
-  SAVING_FORM_COMPLETED,
-  QUICK_NUMBER_OF_ENTRIES,
-  SHOW_LINK,
-  CLEAR_MAX_LENGTH,
-  CLEAR_MIN_LENGTH,
-  ADD_NUMBER_ELEMENT,
-  TOGGLE_FORMATTED_NUMERIC,
-  EDIT_NUMBER_FORMAT,
-  SET_LOGIC_ACTION,
-  SET_LOGIC_TARGET,
-  ADD_FILE_UPLOAD_ELEMENT,
-  ADD_ADDRESS_ELEMENT,
-  EDIT_ADDRESS,
-  QUICK_DISPATCH_PROJECT_ID,
-  REORDER_CURRENT_VIEW,
-  DUPLICATE_ELEMENT
-} from '../action-types/form-builder-actions.types'
+import { formBuilderActionTypes } from '../action-types/form-builder-actions.types'
 import { replaceElementTypes } from '../action-types/replace-elements.types'
 
 const INITIAL_STATE = {
@@ -120,7 +37,7 @@ const INITIAL_STATE = {
 
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
-    case ADD_ELEMENT:
+    case formBuilderActionTypes.ADD_ELEMENT:
       let updatedState = [...state.formdata]
       updatedState.map((page, i) => {
         if (page.label === state.activePage) {
@@ -147,7 +64,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case DUPLICATE_ELEMENT:
+    case formBuilderActionTypes.DUPLICATE_ELEMENT:
       let elementArrayToAddDuplicate = [...state.formdata]
       elementArrayToAddDuplicate[action.payload.page - 1].elements.splice(
         action.payload.index + 1,
@@ -163,7 +80,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case REORDER_CURRENT_VIEW:
+    case formBuilderActionTypes.REORDER_CURRENT_VIEW:
       let latestFormOrder = [...state.formdata]
       latestFormOrder.map((page, i) => {
         if (action.payload.currentPage === page.label) {
@@ -177,7 +94,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case ADD_ADDRESS_ELEMENT:
+    case formBuilderActionTypes.ADD_ADDRESS_ELEMENT:
       let toUpdateAddress = [...state.formdata]
       toUpdateAddress.map((page, i) => {
         if (page.label === state.activePage) {
@@ -201,7 +118,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case ADD_FILE_UPLOAD_ELEMENT:
+    case formBuilderActionTypes.ADD_FILE_UPLOAD_ELEMENT:
       let stateToAddFileUpload = [...state.formdata]
       stateToAddFileUpload.map((page, i) => {
         if (page.label === state.activePage) {
@@ -224,7 +141,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case ADD_NUMBER_ELEMENT:
+    case formBuilderActionTypes.ADD_NUMBER_ELEMENT:
       let initialStateToUpdateNumber = [...state.formdata]
       initialStateToUpdateNumber.map((page, i) => {
         if (page.label === state.activePage) {
@@ -254,7 +171,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case ADD_RATING_ELEMENT:
+    case formBuilderActionTypes.ADD_RATING_ELEMENT:
       let stateToUpdate = [...state.formdata]
       stateToUpdate.map((page, i) => {
         if (page.label === state.activePage) {
@@ -284,25 +201,25 @@ export default function (state = INITIAL_STATE, action) {
         formdata: stateToUpdate
       }
       break
-    case CHANGE_FORM_NAME:
+    case formBuilderActionTypes.CHANGE_FORM_NAME:
       return {
         ...state,
         name: action.payload.name
       }
       break
-    case CHANGE_FORM_DESCRIPTION:
+    case formBuilderActionTypes.CHANGE_FORM_DESCRIPTION:
       return {
         ...state,
         description: action.payload.description
       }
       break
-    case SET_ACTIVE_ELEMENT:
+    case formBuilderActionTypes.SET_ACTIVE_ELEMENT:
       return {
         ...state,
         activeElement: action.payload.uniqueId
       }
       break
-    case ADD_PAGE:
+    case formBuilderActionTypes.ADD_PAGE:
       let tempPages = state.formdata
       tempPages.push(action.payload)
       return {
@@ -310,7 +227,7 @@ export default function (state = INITIAL_STATE, action) {
         formdata: tempPages
       }
       break
-    case DELETE_PAGE:
+    case formBuilderActionTypes.DELETE_PAGE:
       let newForm = [] //form after deletion
       let deletePageArray = state.formdata
       let index = action.payload
@@ -334,19 +251,19 @@ export default function (state = INITIAL_STATE, action) {
           // console.log("replace", action.payload);
         }
       })
-      // console.log("replace", action.payload, action.index, action.activePage);
+
       return {
         ...state
       }
       break
-    case RENAME_FORM:
+    case formBuilderActionTypes.RENAME_FORM:
       return {
         ...state,
         name: action.payload.newName
       }
       break
 
-    case SET_ACTIVE_PAGE:
+    case formBuilderActionTypes.SET_ACTIVE_PAGE:
       let newActivePage = action.payload
       let formatPayload = parseInt(action.payload.split(' ')[1])
       if (state.formdata.length < formatPayload) {
@@ -358,7 +275,7 @@ export default function (state = INITIAL_STATE, action) {
         activeSection: 'Section 1'
       }
       break
-    case ADD_SECTION:
+    case formBuilderActionTypes.ADD_SECTION:
       let addSectionToPage = state.formdata.filter((match) => {
         return match.label == state.activePage
       })
@@ -369,7 +286,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case SET_ACTIVE_SECTION:
+    case formBuilderActionTypes.SET_ACTIVE_SECTION:
       let newActiveSection = action.payload
       let pageForTargetSection = ''
       let extractForm = [...state.formdata]
@@ -389,7 +306,7 @@ export default function (state = INITIAL_STATE, action) {
         activeSection: newActiveSection
       }
       break
-    case DELETE_SECTION:
+    case formBuilderActionTypes.DELETE_SECTION:
       let newFormAfterSectionDelete = []
       let newSectionAfterDelete = []
       let PageToDeleteSection = {}
@@ -416,7 +333,7 @@ export default function (state = INITIAL_STATE, action) {
         activeSection: 'Section 1'
       }
       break
-    case UPDATE_ELEMENT_VIEW:
+    case formBuilderActionTypes.UPDATE_ELEMENT_VIEW:
       let tempView = [...state.formdata]
       let currenetElementsView = []
       tempView.map((targetPage, i) => {
@@ -434,7 +351,7 @@ export default function (state = INITIAL_STATE, action) {
         currentView: currenetElementsView
       }
       break
-    case DELETE_ELEMENT:
+    case formBuilderActionTypes.DELETE_ELEMENT:
       let getFormData = [...state.formdata]
       let formAfterDelete = []
       getFormData.map((page, i) => {
@@ -450,7 +367,7 @@ export default function (state = INITIAL_STATE, action) {
         formdata: getFormData
       }
       break
-    case EDIT_ELEMENT_LABEL:
+    case formBuilderActionTypes.EDIT_ELEMENT_LABEL:
       let formToEditLabel = [...state.formdata]
       formToEditLabel.map((page, i) => {
         if (page.label === state.activePage) {
@@ -467,7 +384,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case EDIT_ADDRESS:
+    case formBuilderActionTypes.EDIT_ADDRESS:
       let toEditAddress = [...state.formdata]
       toEditAddress.map((page, i) => {
         if (page.label === state.activePage) {
@@ -484,7 +401,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case EDIT_NUMBER_FORMAT:
+    case formBuilderActionTypes.EDIT_NUMBER_FORMAT:
       let formToEditNumberFormat = [...state.formdata]
       formToEditNumberFormat.map((page, i) => {
         if (page.label === state.activePage) {
@@ -501,7 +418,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case EDIT_RATING_LABEL:
+    case formBuilderActionTypes.EDIT_RATING_LABEL:
       let formToEditRatingLabel = [...state.formdata]
       formToEditRatingLabel.map((page, i) => {
         if (page.label === state.activePage) {
@@ -518,7 +435,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case ADD_MAX_CHARS:
+    case formBuilderActionTypes.ADD_MAX_CHARS:
       let formToAddMaxChars = [...state.formdata]
       formToAddMaxChars.map((page, i) => {
         if (page.label === state.activePage) {
@@ -535,7 +452,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case ADD_MIN_CHARS:
+    case formBuilderActionTypes.ADD_MIN_CHARS:
       let formToAddMinChars = [...state.formdata]
       formToAddMinChars.map((page, i) => {
         if (page.label === state.activePage) {
@@ -552,7 +469,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case CLEAR_MIN_LENGTH:
+    case formBuilderActionTypes.CLEAR_MIN_LENGTH:
       let formToClearMinChars = [...state.formdata]
       formToClearMinChars.map((page, i) => {
         if (page.label === state.activePage) {
@@ -569,7 +486,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case ADD_MAX_RATING:
+    case formBuilderActionTypes.ADD_MAX_RATING:
       let formToAddMaxRating = [...state.formdata]
       formToAddMaxRating.map((page, i) => {
         if (page.label === state.activePage) {
@@ -597,7 +514,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case ADD_ELEMENT_HINT:
+    case formBuilderActionTypes.ADD_ELEMENT_HINT:
       let elementToEditHint = [...state.formdata]
       elementToEditHint.map((page, i) => {
         if (page.label === state.activePage) {
@@ -614,7 +531,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case EDIT_PLACEHOLDER:
+    case formBuilderActionTypes.EDIT_PLACEHOLDER:
       let elementToEditPlaceholder = [...state.formdata]
       elementToEditPlaceholder.map((page, i) => {
         if (page.label === state.activePage) {
@@ -631,7 +548,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case ADD_ELEMENT_DESCRIPTION:
+    case formBuilderActionTypes.ADD_ELEMENT_DESCRIPTION:
       let elementToAddDescription = [...state.formdata]
       elementToAddDescription.map((page, i) => {
         if (page.label === state.activePage) {
@@ -648,7 +565,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case ADD_ELEMENT_FORMAT:
+    case formBuilderActionTypes.ADD_ELEMENT_FORMAT:
       let elementToAddFormat = state.formdata
       elementToAddFormat.map((page, i) => {
         if (page.label === state.activePage) {
@@ -669,7 +586,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case ADD_MULTICHOICE_ELEMENT:
+    case formBuilderActionTypes.ADD_MULTICHOICE_ELEMENT:
       let stateToAddMultichoice = [...state.formdata]
       stateToAddMultichoice.map((page, i) => {
         if (page.label === state.activePage) {
@@ -695,7 +612,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case TOGGLE_WITH_PHOTO:
+    case formBuilderActionTypes.TOGGLE_WITH_PHOTO:
       let stateToToggleWithPhoto = [...state.formdata]
       stateToToggleWithPhoto.map((page, i) => {
         if (page.label === state.activePage) {
@@ -713,7 +630,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case TOGGLE_FORMATTED_NUMERIC:
+    case formBuilderActionTypes.TOGGLE_FORMATTED_NUMERIC:
       let stateToToggleFormattedNumeric = [...state.formdata]
       stateToToggleFormattedNumeric.map((page, i) => {
         if (page.label === state.activePage) {
@@ -733,7 +650,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case ADD_RULE:
+    case formBuilderActionTypes.ADD_RULE:
       let formDataToAddRule = [...state.formdata]
       formDataToAddRule.map((page, i) => {
         if (page.label === state.activePage) {
@@ -755,7 +672,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case REMOVE_RULE:
+    case formBuilderActionTypes.REMOVE_RULE:
       let formDataToRemoveRule = [...state.formdata]
       formDataToRemoveRule.map((page, i) => {
         if (page.label === state.activePage) {
@@ -774,7 +691,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case SET_LOGIC_OPTION:
+    case formBuilderActionTypes.SET_LOGIC_OPTION:
       let formToAddSelected = [...state.formdata]
       formToAddSelected.map((page, i) => {
         if (page.label === state.activePage) {
@@ -791,7 +708,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case SET_CONDITION:
+    case formBuilderActionTypes.SET_CONDITION:
       let formToAddCondition = [...state.formdata]
       formToAddCondition.map((page, i) => {
         if (page.label === state.activePage) {
@@ -809,7 +726,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case SET_LOGIC_ACTION:
+    case formBuilderActionTypes.SET_LOGIC_ACTION:
       let formToSetValue = [...state.formdata]
       formToSetValue.map((page, i) => {
         if (page.label === state.activePage) {
@@ -826,7 +743,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case SET_LOGIC_TARGET:
+    case formBuilderActionTypes.SET_LOGIC_TARGET:
       let formToSetJump = [...state.formdata]
       formToSetJump.map((page, i) => {
         if (page.label === state.activePage) {
@@ -843,7 +760,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case SET_OTHERWISE:
+    case formBuilderActionTypes.SET_OTHERWISE:
       let formToSEtOtherwise = [...state.formdata]
       formToSEtOtherwise.map((page, i) => {
         if (page.label === state.activePage) {
@@ -860,7 +777,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case ADD_MULTICHOICE_WITH_PHOTO:
+    case formBuilderActionTypes.ADD_MULTICHOICE_WITH_PHOTO:
       let stateToAddMultichoiceWithPhoto = [...state.formdata]
       stateToAddMultichoiceWithPhoto.map((page, i) => {
         if (page.label === state.activePage) {
@@ -884,7 +801,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case EDIT_MULTICHOICE_OPTIONS_LABEL:
+    case formBuilderActionTypes.EDIT_MULTICHOICE_OPTIONS_LABEL:
       let formBeforeEditMultichoiceOptionLabel = state.formdata
       formBeforeEditMultichoiceOptionLabel.map((page, i) => {
         if (page.label === state.activePage) {
@@ -906,7 +823,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case ADD_MULTICHOICE_OPTION:
+    case formBuilderActionTypes.ADD_MULTICHOICE_OPTION:
       let formToAddMultichoiceOption = [...state.formdata]
       formToAddMultichoiceOption.map((page, i) => {
         if (page.label === state.activePage) {
@@ -930,7 +847,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case DELETE_MULTICHOICE_OPTION:
+    case formBuilderActionTypes.DELETE_MULTICHOICE_OPTION:
       let formToDeleteMultichoiceOPtion = [...state.formdata]
       formToDeleteMultichoiceOPtion.map((page, i) => {
         if (page.label === state.activePage) {
@@ -947,7 +864,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case ADD_MULTICHOICE_WITH_PHOTO_OPTION:
+    case formBuilderActionTypes.ADD_MULTICHOICE_WITH_PHOTO_OPTION:
       let formToAddMultichoiceOptionWithPhoto = [...state.formdata]
       formToAddMultichoiceOptionWithPhoto.map((page, i) => {
         if (page.label === state.activePage) {
@@ -967,7 +884,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case TOGGLE_BOOLEAN:
+    case formBuilderActionTypes.TOGGLE_BOOLEAN:
       let formToEditGeoData = [...state.formdata]
       formToEditGeoData.map((page, i) => {
         if (page.label === state.activePage) {
@@ -984,7 +901,7 @@ export default function (state = INITIAL_STATE, action) {
         formdata: formToEditGeoData
       }
       break
-    case ADD_EMBEDDED_PHOTO:
+    case formBuilderActionTypes.ADD_EMBEDDED_PHOTO:
       let stateToAddEmbeddedPhoto = state.formdata
       stateToAddEmbeddedPhoto.map((page, i) => {
         if (page.label === state.activePage) {
@@ -1013,7 +930,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case ADD_SINGLE_PHOTO:
+    case formBuilderActionTypes.ADD_SINGLE_PHOTO:
       let stateToAddSinglePhoto = state.formdata
       stateToAddSinglePhoto.map((page, i) => {
         if (page.label === state.activePage) {
@@ -1040,7 +957,7 @@ export default function (state = INITIAL_STATE, action) {
         formdata: stateToAddSinglePhoto
       }
       break
-    case ADD_MULTI_PHOTO:
+    case formBuilderActionTypes.ADD_MULTI_PHOTO:
       let stateToAddMultiPhoto = state.formdata
       stateToAddMultiPhoto.map((page, i) => {
         if (page.label === state.activePage) {
@@ -1064,20 +981,20 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case OPEN_FIELD_RULES:
+    case formBuilderActionTypes.OPEN_FIELD_RULES:
       return {
         ...state,
         openFieldRules: true
       }
       break
-    case CLOSE_FIELD_RULES:
+    case formBuilderActionTypes.CLOSE_FIELD_RULES:
       return {
         ...state,
         openFieldRules: false
       }
       break
 
-    case ADD_NEW_FORM:
+    case formBuilderActionTypes.ADD_NEW_FORM:
       return {
         ...state,
         name: action.payload.formName,
@@ -1087,20 +1004,20 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case LOADING_ALL_FORMS:
+    case formBuilderActionTypes.LOADING_ALL_FORMS:
       return {
         ...state,
         loadingForms: true
       }
       break
-    case LOADING_ALL_FORMS_COMPLETED:
+    case formBuilderActionTypes.LOADING_ALL_FORMS_COMPLETED:
       return {
         ...state,
         loadingForms: false
       }
       break
 
-    case GET_ALL_FORMS:
+    case formBuilderActionTypes.GET_ALL_FORMS:
       return {
         ...state,
         allFormsCreated: action.payload.forms,
@@ -1108,7 +1025,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case GET_SINGLE_FORM_DETAIL:
+    case formBuilderActionTypes.GET_SINGLE_FORM_DETAIL:
       const { form } = action.payload
       return {
         ...state,
@@ -1123,14 +1040,14 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case NEW_NAME_FOR_FORM_EDIT:
+    case formBuilderActionTypes.NEW_NAME_FOR_FORM_EDIT:
       return {
         ...state,
         name: action.payload.newName
       }
       break
 
-    case GET_FORM_TO_EDIT:
+    case formBuilderActionTypes.GET_FORM_TO_EDIT:
       const { formData } = action.payload
       let quickDispatchFormAdded = { ...state.quickDispatch }
       quickDispatchFormAdded.form = formData._id
@@ -1147,41 +1064,41 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case PREVIEW_SINGLE_FORM:
+    case formBuilderActionTypes.PREVIEW_SINGLE_FORM:
       return {
         ...state,
         formPreview: action.payload.form
       }
       break
 
-    case LOADING_SINGLE_FORM:
+    case formBuilderActionTypes.LOADING_SINGLE_FORM:
       return {
         ...state,
         loadingPreview: true
       }
       break
 
-    case LOADING_SINGLE_FORM_COMPLETED:
+    case formBuilderActionTypes.LOADING_SINGLE_FORM_COMPLETED:
       return {
         ...state,
         loadingPreview: false
       }
       break
 
-    case SAVING_FORM:
+    case formBuilderActionTypes.SAVING_FORM:
       return {
         ...state,
         savingForm: true
       }
       break
-    case SAVING_FORM_COMPLETED:
+    case formBuilderActionTypes.SAVING_FORM_COMPLETED:
       return {
         ...state,
         savingForm: false
       }
       break
 
-    case SAVE_FORM:
+    case formBuilderActionTypes.SAVE_FORM:
       let quickDispatchFormAddedOnSave = { ...state.quickDispatch }
       quickDispatchFormAddedOnSave.form = action.payload.activeForm._id
       return {
@@ -1191,40 +1108,40 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case LOADING:
+    case formBuilderActionTypes.LOADING:
       return {
         ...state,
         loading: true
       }
       break
 
-    case LOADING_COMPLETE:
+    case formBuilderActionTypes.LOADING_COMPLETE:
       return {
         ...state,
         loading: false
       }
       break
-    case INPUT_NEW_FORM_NAME:
+    case formBuilderActionTypes.INPUT_NEW_FORM_NAME:
       return {
         ...state,
         name: action.payload.name
       }
       break
-    case GET_SINGLE_FORM:
+    case formBuilderActionTypes.GET_SINGLE_FORM:
       return {
         ...state,
         formPreview: action.payload.form
       }
       break
 
-    case SHOW_LINK:
+    case formBuilderActionTypes.SHOW_LINK:
       return {
         ...state,
         generatedLink: action.payload.link
       }
       break
 
-    case QUICK_DISPATCH_NAME:
+    case formBuilderActionTypes.QUICK_DISPATCH_NAME:
       let quickNameEdit = { ...state.quickDispatch }
       quickNameEdit.name = action.payload.name
       return {
@@ -1234,7 +1151,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case QUICK_DISPATCH_PROJECT:
+    case formBuilderActionTypes.QUICK_DISPATCH_PROJECT:
       let quickProjectNameAdded = { ...state.quickDispatch }
       quickProjectNameAdded.project = action.payload.name
       quickProjectNameAdded.projectId = ''
@@ -1244,7 +1161,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case QUICK_DISPATCH_PROJECT_ID:
+    case formBuilderActionTypes.QUICK_DISPATCH_PROJECT_ID:
       let quickProjectIdAdded = { ...state.quickDispatch }
       quickProjectIdAdded.projectId = action.payload.id
       quickProjectIdAdded.project = ''
@@ -1254,7 +1171,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case QUICK_NUMBER_OF_ENTRIES:
+    case formBuilderActionTypes.QUICK_NUMBER_OF_ENTRIES:
       let numberOfEntriesAdded = { ...state.quickDispatch }
       numberOfEntriesAdded.totalExpectedEntries = parseInt(
         action.payload.number
@@ -1265,7 +1182,7 @@ export default function (state = INITIAL_STATE, action) {
       }
       break
 
-    case QUICK_DISPATCH_START_DATE:
+    case formBuilderActionTypes.QUICK_DISPATCH_START_DATE:
       let quickDispatchStartDateAdded = { ...state.quickDispatch }
       let formattedStartDate = new Date(action.payload.date).toISOString()
       quickDispatchStartDateAdded.startDate = formattedStartDate

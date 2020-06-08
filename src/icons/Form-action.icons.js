@@ -9,7 +9,7 @@ const FormActionIcon = () => {
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
-      <g opacity='0.7' clip-path='url(#clip0)'>
+      <g opacity='0.7' clipPath='url(#clip0)'>
         <path
           d='M8.89518 12.1042C8.89518 11.0571 8.04639 10.2083 6.99935 10.2083C5.95231 10.2083 5.10352 11.0571 5.10352 12.1042C5.10352 13.1512 5.95231 14 6.99935 14C8.04639 14 8.89518 13.1512 8.89518 12.1042Z'
           fill='#97A3B4'

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import uid from 'uid'
-// import "./FormBuilderControlButtons.css";
 import { connect } from 'react-redux'
 import {
   addElement,
@@ -45,11 +44,6 @@ const FormBuilderControlButtons = (props) => {
     addRatingElement,
     addNumberElement,
     addMultichoiceElement,
-    addMultichoiceWithPhoto,
-    addHybridGeolocation,
-    addEmbeddedPhoto,
-    AddSinglePhoto,
-    AddMultiPhoto,
     addAddressElement,
     addFileUploadElement
   } = props
@@ -65,7 +59,7 @@ const FormBuilderControlButtons = (props) => {
         onMouseMove={(e) => {
           setMouseVerticalLocation(e.screenY)
         }}
-        class={
+        className={
           openDrawer
             ? 'add-form-fields-wrapper expand'
             : 'add-form-fields-wrapper'

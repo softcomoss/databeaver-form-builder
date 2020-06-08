@@ -328,7 +328,7 @@ const MultipleChoice = (props) => {
                 onClick={() => {
                   addOption()
                 }}
-                class='btn btn-fill add-option-button mt-2'
+                class='btn btn-fill add-option-button'
               >
                 Add
               </button>
@@ -367,7 +367,7 @@ const MultipleChoice = (props) => {
                   <input
                     className='uk-checkbox'
                     type='checkbox'
-                    onClick={(e) => {
+                    onChange={(e) => {
                       toggleBooleanState(
                         e.target.checked,
                         'enabled',
@@ -392,7 +392,7 @@ const MultipleChoice = (props) => {
                   <input
                     className='uk-checkbox'
                     type='checkbox'
-                    onClick={(e) => {
+                    onChange={(e) => {
                       toggleBooleanState(
                         e.target.checked,
                         'hidden',
@@ -407,7 +407,7 @@ const MultipleChoice = (props) => {
                   <input
                     className='uk-checkbox'
                     type='checkbox'
-                    onClick={(e) => {
+                    onChange={(e) => {
                       toggleBooleanState(
                         e.target.checked,
                         'validated',
