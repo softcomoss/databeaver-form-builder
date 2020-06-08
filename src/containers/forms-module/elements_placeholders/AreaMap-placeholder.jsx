@@ -18,6 +18,7 @@ import {
 } from '../../../redux/actions/form-action/formPropertyActions'
 import { nameShortner } from '../../../utils/card-name-shortener.utils'
 import AreaMapIcon from '../../../icons/Area-map.icons'
+import MapSvg from '../../../components/map-svg.component'
 
 const AreaMap = (props) => {
   const [settingsDisplay, toggleSettings] = useState(false)
@@ -293,12 +294,7 @@ const AreaMap = (props) => {
                 </span>
               </span>
               <label htmlFor={`${elementDetails.unique_id}`} className='upload'>
-                <input
-                  disabled
-                  type='file'
-                  id={`${elementDetails.unique_id}`}
-                />
-                <img src='/uploads/ent-map.svg' alt='img' />
+                <MapSvg />
               </label>
             </div>
           </div>
