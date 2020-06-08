@@ -2,15 +2,7 @@ import { formBuilderActionTypes } from '../action-types/form-builder-actions.typ
 import { replaceElementTypes } from '../action-types/replace-elements.types'
 
 const INITIAL_STATE = {
-  allFormsCreated: [],
-  formsCount: 0,
-  loadingForms: false,
-  generatedLink: '',
-  savingForm: false,
-  loadingPreview: false,
-  currentForm: {},
-  activeForm: {},
-  name: 'sample',
+  name: '',
   formPreview: {},
   description: '',
   sector: '',
@@ -21,18 +13,7 @@ const INITIAL_STATE = {
   activeSection: 'Section 1',
   formdata: [{ label: 'Page 1', pos: '1', elements: [] }],
   data: [],
-  currentView: [],
-  fetchedFormToEdit: false,
-  loading: false,
-  quickDispatch: {
-    name: '',
-    startDate: '',
-    dueDate: '',
-    form: '',
-    project: '',
-    projectId: '',
-    totalExpectedEntries: ''
-  }
+  currentView: []
 }
 
 export default function (state = INITIAL_STATE, action) {

@@ -16,6 +16,11 @@ class Builder extends Component {
     this.state = { copySuccess: '', addNewProject: false, saved: false }
   }
 
+  saveForm = () => {
+    const { onSave, formData } = this.props
+    onSave(formData)
+  }
+
   render() {
     const { changeFormName } = this.props
     return (
@@ -61,7 +66,9 @@ class Builder extends Component {
                       style={{ fontSize: '16px', cursor: 'pointer' }}
                       className='form-extra'
                     >
-                      <span aria-expanded='false'>save</span>
+                      <span onClick={this.saveForm} aria-expanded='false'>
+                        save
+                      </span>
                     </div>
                     <div className='preview-info-wrap d-flx-jsb'>
                       <h3>Preview</h3>
