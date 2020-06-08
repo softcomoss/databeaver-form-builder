@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import uid from 'uid'
 import {
   deleteElement,
   setActiveElement
@@ -25,18 +24,16 @@ const DefaultText = (props) => {
   const {
     elementDetails,
     deleteElement,
-    addElement,
+
     setActiveElement,
     activeElement,
     index,
     editElementLabel,
     formData,
     activePage,
-    addElementHint,
+
     toggleBooleanState,
-    addMaximumCharacters,
-    addMinimumCharacters,
-    editPlaceholder,
+
     duplicateElement
   } = props
 

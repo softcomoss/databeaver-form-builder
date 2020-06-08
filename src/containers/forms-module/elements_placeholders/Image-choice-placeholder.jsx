@@ -1,14 +1,10 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import uid from 'uid'
 import {
   deleteElement,
   setActiveElement
 } from '../../../redux/actions/form-action/form.actions'
-import {
-  addElement,
-  addMultichoiceElement
-} from '../../../redux/actions/form-action/formControlActions'
+import { addMultichoiceElement } from '../../../redux/actions/form-action/formControlActions'
 import { showModal, closeModal } from '../../../utils/modal-control.utils'
 import ChangeElementType from '../Change-element-type.container'
 import {
@@ -27,23 +23,16 @@ import { nameShortner } from '../../../utils/card-name-shortener.utils'
 
 const ImageChoice = (props) => {
   const [settingsDisplay, toggleSettings] = useState(false)
-  const [optionLabel, setOptionLabel] = useState('')
   const {
     elementDetails,
     deleteElement,
-    addElement,
     setActiveElement,
     activeElement,
     index,
     editElementLabel,
     formData,
     activePage,
-    addElementHint,
     toggleBooleanState,
-    addMaximumCharacters,
-    addMinimumCharacters,
-    addMultiChoiceWithPhotoOption,
-    deleteMultichoiceOption,
     duplicateElement,
     serialNumber
   } = props
@@ -112,7 +101,6 @@ const ImageChoice = (props) => {
                 }}
                 className='d-flx-alc-jc required-btn'
                 uk-tooltip='title: Click to make the question compulsory; delay: 100; pos: bottom-center'
-                title
                 aria-expanded='false'
               >
                 <span

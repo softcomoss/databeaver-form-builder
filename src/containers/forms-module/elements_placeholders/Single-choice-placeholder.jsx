@@ -1,15 +1,10 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import { connect } from 'react-redux'
-import uid from 'uid'
 import {
   deleteElement,
   setActiveElement
 } from '../../../redux/actions/form-action/form.actions'
-import {
-  addElement,
-  addMultichoiceElement
-} from '../../../redux/actions/form-action/formControlActions'
+import { addMultichoiceElement } from '../../../redux/actions/form-action/formControlActions'
 import { showModal, closeModal } from '../../../utils/modal-control.utils'
 import ChangeElementType from '../Change-element-type.container'
 import {
@@ -35,19 +30,14 @@ const SingleChoice = (props) => {
   const [optionLabel, setOptionLabel] = useState('')
   const {
     elementDetails,
-    addMultichoiceElement,
     deleteElement,
-    addElement,
     setActiveElement,
     activeElement,
     index,
     editElementLabel,
     formData,
     activePage,
-    addElementHint,
     toggleBooleanState,
-    addMaximumCharacters,
-    addMinimumCharacters,
     addMultiChoiceOption,
     deleteMultichoiceOption,
     toggleWithPhoto,
@@ -188,7 +178,6 @@ const SingleChoice = (props) => {
                 }}
                 className='d-flx-alc-jc required-btn'
                 uk-tooltip='title: Click to make the question compulsory; delay: 100; pos: bottom-center'
-                title
                 aria-expanded='false'
               >
                 <span

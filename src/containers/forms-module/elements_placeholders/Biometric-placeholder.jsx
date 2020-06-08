@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import uid from 'uid'
 import {
   deleteElement,
   setActiveElement
@@ -13,7 +12,6 @@ import {
   addElementHint,
   toggleBooleanState,
   addMaximumCharacters,
-  addMinimumCharacters,
   duplicateElement
 } from '../../../redux/actions/form-action/formPropertyActions'
 import { nameShortner } from '../../../utils/card-name-shortener.utils'
@@ -24,17 +22,14 @@ const Biometric = (props) => {
   const {
     elementDetails,
     deleteElement,
-    addElement,
     setActiveElement,
     activeElement,
     index,
     editElementLabel,
     formData,
     activePage,
-    addElementHint,
     toggleBooleanState,
     addMaximumCharacters,
-    addMinimumCharacters,
     duplicateElement,
     serialNumber
   } = props
@@ -103,7 +98,6 @@ const Biometric = (props) => {
                 }}
                 className='d-flx-alc-jc required-btn'
                 data-uk-tooltip='title: Click to make the question compulsory; delay: 100; pos: bottom-center'
-                title
                 aria-expanded='false'
               >
                 <span
@@ -220,7 +214,7 @@ const Biometric = (props) => {
                   <input
                     className='uk-checkbox'
                     type='checkbox'
-                    onClick={(e) => {
+                    onChange={(e) => {
                       toggleBooleanState(
                         e.target.checked,
                         'isMandatory',
@@ -323,7 +317,6 @@ export default connect(mapStateToProps, {
   editElementLabel,
   addElementHint,
   toggleBooleanState,
-  addMinimumCharacters,
   addMaximumCharacters,
   duplicateElement
 })(Biometric)

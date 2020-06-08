@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import uid from 'uid'
+
 import {
   deleteElement,
   setActiveElement
@@ -24,7 +24,7 @@ const AreaMap = (props) => {
   const {
     elementDetails,
     deleteElement,
-    addElement,
+
     setActiveElement,
     activeElement,
     index,
@@ -33,8 +33,7 @@ const AreaMap = (props) => {
     activePage,
     addElementHint,
     toggleBooleanState,
-    addMaximumCharacters,
-    addMinimumCharacters,
+
     duplicateElement,
     serialNumber
   } = props
@@ -103,7 +102,6 @@ const AreaMap = (props) => {
                 }}
                 className='d-flx-alc-jc required-btn'
                 data-uk-tooltip='title: Click to make the question compulsory; delay: 100; pos: bottom-center'
-                title
                 aria-expanded='false'
               >
                 <span
@@ -219,7 +217,7 @@ const AreaMap = (props) => {
                   <input
                     className='uk-checkbox'
                     type='checkbox'
-                    onClick={(e) => {
+                    onChange={(e) => {
                       toggleBooleanState(
                         e.target.checked,
                         'isMandatory',

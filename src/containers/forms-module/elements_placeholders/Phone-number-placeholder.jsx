@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import uid from 'uid'
 import {
   deleteElement,
   setActiveElement
@@ -25,7 +24,6 @@ const PhoneNumber = (props) => {
   const {
     elementDetails,
     deleteElement,
-    addElement,
     setActiveElement,
     activeElement,
     index,
@@ -34,8 +32,6 @@ const PhoneNumber = (props) => {
     activePage,
     addElementHint,
     toggleBooleanState,
-    addMaximumCharacters,
-    addMinimumCharacters,
     editPlaceholder,
     duplicateElement,
     serialNumber
@@ -107,7 +103,6 @@ const PhoneNumber = (props) => {
                 }}
                 className='d-flx-alc-jc required-btn'
                 uk-tooltip='title: Click to make the question compulsory; delay: 100; pos: bottom-center'
-                title
                 aria-expanded='false'
               >
                 <span
@@ -250,7 +245,6 @@ const PhoneNumber = (props) => {
                   <span>Required</span>
                   <svg
                     uk-tooltip='title: check to make the question compulsory; delay: 100; pos: bottom-center'
-                    title
                     aria-expanded='false'
                   >
                     <use xlinkHref='/uploads/icons.svg#tooltip' />
