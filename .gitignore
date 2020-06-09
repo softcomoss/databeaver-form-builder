@@ -1,9 +1,9 @@
-<<<<<<< HEAD
 
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
 node_modules
+
 
 # builds
 build
@@ -24,6 +24,3 @@ yarn-error.log*
 
 # coverage
 coverage
-=======
-# Add any directories, files, or patterns you don't want to be tracked by version control
->>>>>>> d64d5a2246ea8f3fce1cd24ca80534ed50682a7e
