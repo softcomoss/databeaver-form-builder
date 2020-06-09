@@ -293,24 +293,29 @@ const Date = (props) => {
             </div>
           </div>
         </div>
+
         <div className='preview-container'>
-          <span className='index-no'>{serialNumber + 1}</span>
-          <div className='mb-2-nlc-noc-child formbuilder-prev-inpts overf-scroll'>
-            <span
-              className='label uk-text-truncate'
-              data-uk-tooltip={`title: ${elementDetails.label}; pos: bottom-left`}
-            >
-              {elementDetails.isMandatory && (
-                <span className='required'>*</span>
-              )}
-              {nameShortner(elementDetails.label, 30)}.{' '}
-            </span>
-            <input
-              readOnly
-              type='date'
-              id='text'
-              placeholder={elementDetails.placeholder}
-            />
+          <div className='width-100-pc d-flx prev-question'>
+            <span className='index-no'>{serialNumber + 1}.</span>
+            <div className='width-100-pc formbuilder-prev-inpts'>
+              <label htmlFor='text' className='fb-input'>
+                <span
+                  className='label '
+                  data-uk-tooltip={`title: ${elementDetails.label}; pos: bottom-left`}
+                >
+                  {elementDetails.isMandatory && (
+                    <span className='required'>*</span>
+                  )}
+                  {nameShortner(elementDetails.label, 30)}.{' '}
+                </span>
+                <input
+                  readOnly
+                  type='date'
+                  id={elementDetails.unique_id}
+                  placeholder={elementDetails.placeholder}
+                />
+              </label>
+            </div>
           </div>
         </div>
       </div>
