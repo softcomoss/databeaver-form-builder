@@ -5,9 +5,11 @@ import store from './redux/store/Store'
 
 const Main = ({ uploadAddress, onSave }) => {
   return (
-    <Provider store={store}>
-      <Builder onSave={onSave} uploadAddress={uploadAddress} />
-    </Provider>
+    <div data-testid='main-mount'>
+      <Provider store={store}>
+        <Builder onSave={onSave} uploadAddress={uploadAddress} />
+      </Provider>
+    </div>
   )
 }
 

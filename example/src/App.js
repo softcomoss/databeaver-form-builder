@@ -1,13 +1,11 @@
 import React from 'react'
 
 import { FormBuilder } from 'databeaver-form-builder'
-import 'databeaver-form-builder/dist/styles/uikit.css'
 import 'databeaver-form-builder/dist/styles/style.css'
 
 const App = (props) => {
   const onSaveForm = (data) => {
     console.log(data)
-
     return data
   }
   return (

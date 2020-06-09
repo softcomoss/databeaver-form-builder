@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import { FormBuilder } from '.'
 
-describe('ExampleComponent', () => {
-  it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+describe('Form builder should mount correctly', () => {
+  it('should not crash or return undefined', () => {
+    expect(FormBuilder).toBeTruthy()
   })
 })
