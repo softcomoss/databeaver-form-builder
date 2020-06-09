@@ -50,4 +50,4 @@ Paste the following lines on your index.html file
 
 ## License
 
-<!-- MIT © [w3bh4ck](https://github.com/w3bh4ck) -->
+<![Powered by DatabeaverHQ](https://app.databeaver.co) -->-- Databeaver©
