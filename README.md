@@ -33,13 +33,20 @@ const App = (props) => {
 export default App
 ```
 
-## Styling
+## Styling with UI-kit
 
-import the following styles
+Paste the following lines on your index.html file
 
 ```bash
-import 'databeaver-form-builder/dist/styles/uikit.min.css'
-import 'databeaver-form-builder/dist/styles/style.css'
+  <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/css/uikit.min.css"
+    />
+
+
+     <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/js/uikit-icons.min.js"></script>
 ```
 
 ## License
