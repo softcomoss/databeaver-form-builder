@@ -25,16 +25,16 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "redux": "^4.0.1",
-    "uikit": "^3.2.0",
-    "redux-thunk": "^2.3.0",
-    "react-redux": "^7.0.3",
-    "react-beautiful-dnd": "^13.0.0",
-    "redux-devtools-extension": "^2.13.8",
     "axios": "^0.18.1",
+    "react": "^16.0.0",
+    "react-beautiful-dnd": "^13.0.0",
+    "react-redux": "^7.0.3",
     "react-toastify": "^5.4.0",
-    "uid": "0.0.2"
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "uid": "0.0.2",
+    "uikit": "^3.2.0"
   },
   "devDependencies": {
     "@testing-library/react": "^10.2.1",
@@ -70,5 +70,8 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "redux-mock-store": "^1.5.4"
+  }
 }

@@ -56,6 +56,7 @@ const FormBuilderControlButtons = (props) => {
   return (
     <React.Fragment>
       <section
+        data-testid='control-buttons'
         onMouseMove={(e) => {
           setMouseVerticalLocation(e.screenY)
         }}
