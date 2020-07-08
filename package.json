@@ -1,10 +1,10 @@
 {
-  "name": "databeaver-form-builder",
+  "name": "form-builder-react",
   "version": "1.0.0",
-  "description": "A web SDK for building form generating applications in a fly.",
+  "description": "A web package for building form generating applications in a fly.",
   "author": "w3bh4ck",
   "license": "MIT",
-  "repository": "w3bh4ck/databeaver-form-builder",
+  "repository": "softcomoss/form-builder-react",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",

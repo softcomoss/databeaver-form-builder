@@ -7,7 +7,11 @@
 ## Install
 
 ```bash
-npm install --save databeaver-form-builder
+npm install --save form-builder
+```
+
+```bash
+yarn  add form-builder
 ```
 
 ## Usage
