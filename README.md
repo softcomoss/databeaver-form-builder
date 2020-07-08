@@ -2,16 +2,16 @@
 
 > A web SDK for building form generating applications in a fly.
 
-[![NPM](https://img.shields.io/npm/v/databeaver-form-builder.svg)](https://www.npmjs.com/package/form-builder-react) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/databeaver-form-builder.svg)](https://www.npmjs.com/package/rc-form-builder) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save form-builder
+npm install --save rc-form-builder
 ```
 
 ```bash
-yarn  add form-builder
+yarn  add rc-form-builder
 ```
 
 ## Usage
@@ -19,8 +19,8 @@ yarn  add form-builder
 ```jsx
 import React from 'react'
 
-import { FormBuilder } from 'databeaver-form-builder'
-import 'databeaver-form-builder/dist/styles/style.css'
+import { FormBuilder } from 'rc-form-builder'
+import 'rc-form-builder/dist/styles/style.css'
 
 const App = (props) => {
   const onSaveForm = (data) => {

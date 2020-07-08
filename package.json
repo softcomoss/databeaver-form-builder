@@ -1,10 +1,10 @@
 {
-  "name": "form-builder-react",
+  "name": "rc-form-builder",
   "version": "1.0.0",
   "description": "A web package for building form generating applications in a fly.",
   "author": "w3bh4ck",
   "license": "MIT",
-  "repository": "softcomoss/form-builder-react",
+  "repository": "softcomoss/rc-form-builder",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
