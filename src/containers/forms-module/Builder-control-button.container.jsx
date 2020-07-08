@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import uid from 'uid'
-// import "./FormBuilderControlButtons.css";
-// import { connect } from "react-redux";
-// import {
-// 	addElement,
-// 	addRatingElement,
-// 	addMultichoiceElement,
-// 	addMultichoiceWithPhoto,
-// 	addHybridGeolocation,
-// 	addEmbeddedPhoto,
-// 	AddSinglePhoto,
-// 	AddMultiPhoto,
-// 	addNumberElement,
-// 	addFileUploadElement,
-// 	addAddressElement,
-// } from "../../redux/actions/form-action/formControlActions";
+import { connect } from 'react-redux'
+import {
+  addElement,
+  addRatingElement,
+  addMultichoiceElement,
+  addMultichoiceWithPhoto,
+  addHybridGeolocation,
+  addEmbeddedPhoto,
+  AddSinglePhoto,
+  AddMultiPhoto,
+  addNumberElement,
+  addFileUploadElement,
+  addAddressElement
+} from '../../redux/actions/form-action/formControlActions'
 import { displayControls } from '../../utils/form-controls.utils'
 import ShortTextIcon from '../../icons/Short-text.icons'
 import LongTextIcon from '../../icons/Long-text.icons'
@@ -31,6 +30,8 @@ import LocationIcon from '../../icons/Location.icon'
 import AreaMapIcon from '../../icons/Area-map.icons'
 import RatingIcon from '../../icons/Rating.icon'
 import BiometricIcon from '../../icons/Biometric.icons'
+import AgreementIcon from '../../icons/Agreement.icons'
+import FileUploadIcon from '../../icons/File-upload.icons'
 
 const FormBuilderControlButtons = (props) => {
   const [openDrawer, toggleDrawer] = useState(false)
@@ -43,11 +44,6 @@ const FormBuilderControlButtons = (props) => {
     addRatingElement,
     addNumberElement,
     addMultichoiceElement,
-    addMultichoiceWithPhoto,
-    addHybridGeolocation,
-    addEmbeddedPhoto,
-    AddSinglePhoto,
-    AddMultiPhoto,
     addAddressElement,
     addFileUploadElement
   } = props
@@ -60,10 +56,11 @@ const FormBuilderControlButtons = (props) => {
   return (
     <React.Fragment>
       <section
+        data-testid='control-buttons'
         onMouseMove={(e) => {
           setMouseVerticalLocation(e.screenY)
         }}
-        class={
+        className={
           openDrawer
             ? 'add-form-fields-wrapper expand'
             : 'add-form-fields-wrapper'
@@ -79,9 +76,11 @@ const FormBuilderControlButtons = (props) => {
               : 'add-form-fields-drawer toggler open-drawer'
           }
         >
-          <svg>
-            <use xlinkHref='../../uploads/icons.svg#left-drop' />
-          </svg>
+          {openDrawer ? (
+            <span uk-icon='icon: shrink; ratio: 2'></span>
+          ) : (
+            <span uk-icon='icon: expand; ratio: 2'></span>
+          )}
         </button>
         <div className='add-form-fields-inner-wrapper'>
           <div className='search-form-fields'>
@@ -91,14 +90,10 @@ const FormBuilderControlButtons = (props) => {
               }}
               className='search-btn toggler'
             >
-              <svg>
-                <use href='/uploads/icons.svg#search' />
-              </svg>
+              <span uk-icon='search'></span>
             </button>
             <label className='search'>
-              <svg>
-                <use href='/uploads/icons.svg#search' />
-              </svg>
+              <span uk-icon='search'></span>
               <input
                 onChange={(e) => setQuery(e.target.value)}
                 type='search'
@@ -155,9 +150,6 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  {/* <svg>
-                    <use xlinkHref='./src/uploads/icons.svg#email' />
-                  </svg> */}
                   <span className='flx-dir-c'>
                     <LongTextIcon />
                     <span className='btn-title'>Long text</span>
@@ -273,10 +265,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#address' />
-                  </svg>
-                  <span className='btn-title'>Address</span>
+                  <span>
+                    <LocationIcon />
+                    <span className='btn-title'>Address</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -304,8 +296,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <RatingIcon />
-                  <span className='btn-title'>Ratings</span>
+                  <span>
+                    <RatingIcon />
+                    <span className='btn-title'>Ratings</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -408,8 +402,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <MultiChoiceIcon />
-                  <span className='btn-title'>Multiple choice</span>
+                  <span>
+                    <MultiChoiceIcon />
+                    <span className='btn-title'>Multiple choice</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -508,8 +504,11 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <LocationIcon />
-                  <span className='btn-title'>Location</span>
+                  <span>
+                    {' '}
+                    <LocationIcon />
+                    <span className='btn-title'>Location</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -533,8 +532,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <AreaMapIcon />
-                  <span className='btn-title'>Area map</span>
+                  <span>
+                    <AreaMapIcon />
+                    <span className='btn-title'>Area map</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -565,10 +566,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#file-upload' />
-                  </svg>
-                  <span className='btn-title'>File upload</span>
+                  <span>
+                    <FileUploadIcon />
+                    <span className='btn-title'>File upload</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -618,8 +619,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <BiometricIcon />
-                  <span className='btn-title'>biometric</span>
+                  <span>
+                    <BiometricIcon />
+                    <span className='btn-title'>biometric</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -649,10 +652,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#agreement' />
-                  </svg>
-                  <span className='btn-title'>Agreement</span>
+                  <span>
+                    <AgreementIcon />
+                    <span className='btn-title'>Agreement</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -682,10 +685,10 @@ const FormBuilderControlButtons = (props) => {
                   }
                   className='fields-btn-ls'
                 >
-                  <svg>
-                    <use xlinkHref='/uploads/icons.svg#short-text' />
-                  </svg>
-                  <span className='btn-title'>Default Text</span>
+                  <span>
+                    <ShortTextIcon />
+                    <span className='btn-title'>Default Text</span>
+                  </span>
                 </button>
                 <div
                   className='form-input-dtls'
@@ -706,23 +709,21 @@ const FormBuilderControlButtons = (props) => {
   )
 }
 
-// const mapStateToProps = (state) => ({
-// 	type: state.addElement,
-// 	id: state.addElement,
-// });
+const mapStateToProps = (state) => ({
+  type: state.addElement,
+  id: state.addElement
+})
 
-// export default connect(mapStateToProps, {
-// 	addElement,
-// 	addRatingElement,
-// 	addMultichoiceElement,
-// 	addHybridGeolocation,
-// 	addEmbeddedPhoto,
-// 	AddSinglePhoto,
-// 	AddMultiPhoto,
-// 	addNumberElement,
-// 	addMultichoiceWithPhoto,
-// 	addFileUploadElement,
-// 	addAddressElement,
-// })(FormBuilderControlButtons);
-
-export default FormBuilderControlButtons
+export default connect(mapStateToProps, {
+  addElement,
+  addRatingElement,
+  addMultichoiceElement,
+  addHybridGeolocation,
+  addEmbeddedPhoto,
+  AddSinglePhoto,
+  AddMultiPhoto,
+  addNumberElement,
+  addMultichoiceWithPhoto,
+  addFileUploadElement,
+  addAddressElement
+})(FormBuilderControlButtons)

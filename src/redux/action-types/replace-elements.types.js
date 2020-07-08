@@ -1,1 +1,3 @@
-export const REPLACE_ELEMENT = "REPLACE_ELEMENT";
+export const replaceElementTypes = {
+  REPLACE_ELEMENT: 'REPLACE_ELEMENT'
+}

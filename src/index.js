@@ -1,10 +1,10 @@
 import React from 'react'
 import Main from './Main'
 
-export const FormBuilder = () => {
+export const FormBuilder = ({ uploadAddress, onSave }) => {
   return (
     <div>
-      <Main />
+      <Main onSave={onSave} uploadAddress={uploadAddress} />
     </div>
   )
 }
