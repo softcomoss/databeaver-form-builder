@@ -1,6 +1,6 @@
 {
   "name": "rc-form-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A web package for building form generating applications in a fly.",
   "author": "w3bh4ck",
   "license": "MIT",
