@@ -1,8 +1,8 @@
-# databeaver-form-builder
+# rc-form-builder
 
 > A web SDK for building form generating applications in a fly.
 
-[![NPM](https://img.shields.io/npm/v/databeaver-form-builder.svg)](https://www.npmjs.com/package/rc-form-builder) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/rc-form-builder.svg)](https://www.npmjs.com/package/rc-form-builder) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
